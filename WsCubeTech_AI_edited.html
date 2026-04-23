@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.main{
+  max-width:600px;
+  margin:auto;
+  border:2px solid red;
+}
+
+/* Row 1 */
+.row1{
+  display:flex;
+}
+
+.row1 div{
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.row1c1{ flex:1; background:lightcyan; }
+.row1c2{ flex:1; background:pink; }
+
+/* Row 2 */
+.row2{
+  display:flex;
+}
+
+.row2 div{
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.row2c1{
+  flex:1;
+  border:1px solid black;
+}
+
+.row2c2{
+  flex:2;
+  background:yellow;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="row1">
+            <div class="row1c1">Home</div>
+            <div class="row1c2">About</div>
+        </div>
+        <div class="row2">
+            <div class="row2c1">Course</div>
+            <div class="row2c2"></div>
+        </div>
+    </div>
+</body>
+</html>
