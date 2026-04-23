@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+.main{
+  max-width:1000px;
+  margin:auto;
+  border:3px solid red;
+}
+
+/* HEADER */
+.row1{
+  height:100px;
+  background:purple;
+  color:white;
+  font-weight:bold;
+  font-style:italic;
+  font-size:22px;
+  text-transform:uppercase;
+  word-spacing:20px;
+  letter-spacing:4px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* NAVBAR */
+.row2{
+  display:flex;
+}
+
+.row2 div{
+  flex:1;
+  height:40px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+  color:white;
+}
+
+/* Menu Colors */
+.row2c1{ background:brown; }
+.row2c2{ background:green; }
+.row2c3{ background:gold; color:black; }
+.row2c4{ background:salmon; }
+.row2c5{ background:pink; color:black; }
+
+/* MOBILE RESPONSIVE 📱 */
+@media(max-width:700px){
+  .row2{
+    flex-direction:column;
+  }
+}
+    </style>
+
+</head>
+<body>
+    <div class="row2">
+  <div class="row2c1">Home</div>
+  <div class="row2c2">About</div>
+  <div class="row2c3">Course</div>
+  <div class="row2c4">Gallery</div>
+  <div class="row2c5">Contact</div>
+</div>
+</body>
+</html>
