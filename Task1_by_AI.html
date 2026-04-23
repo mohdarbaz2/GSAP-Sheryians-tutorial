@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.main{
+    max-width:900px;
+    margin:auto;
+    border:3px solid red;
+}
+
+/* Row 1 */
+.row1{
+    display:flex;
+}
+
+.row1 div{
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.row1c1{ flex:2; background:aqua; }
+.row1c2{ flex:3; background:pink; }
+.row1c3{ flex:4; background:gray; }
+
+/* Row 2 */
+.row2{
+    height:100px;
+    background:lightskyblue;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Row 3 */
+.row3{
+    display:flex;
+}
+
+.row3 div{
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    color:white;
+}
+
+.row3c1{ flex:4; background:blue; }
+.row3c2{ flex:5; background:silver; color:black; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="row1">
+         <div class="row1c1">Home</div>
+         <div class="row1c2">About</div>
+         <div class="row1c3">Course</div>
+        </div>
+        <div class="row2">
+            <span>Welcome to WS</span>
+        </div>
+        <div class="row3">
+            <div class="row3c1">IIP</div>
+            <div class="row3c2">WS Cube</div>
+        </div>
+    </div>
+</body>
+</html>
