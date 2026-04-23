@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GSAP Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+    body{
+  margin:0;
+  font-family:Arial;
+  background:#0f0f0f;
+  color:white;
+  overflow-x:hidden;
+}
+
+.nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  z-index:100;
+}
+
+ul{
+  display:flex;
+  gap:40px;
+  list-style:none;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero-title{
+  font-size:70px;
+  opacity:0;
+}
+
+.hero-sub{
+  opacity:0;
+  margin:20px 0;
+}
+
+.btn{
+  padding:15px 40px;
+  border:none;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.floating-img{
+  position:absolute;
+  right:10%;
+  top:25%;
+  width:250px;
+}
+
+.features{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:50px;
+}
+
+.card{
+  background:#1e1e1e;
+  padding:60px;
+  font-size:24px;
+  opacity:0;
+  transform:translateY(100px);
+}
+
+.cta{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <h2 class="logo">Nova</h2>
+  <ul>
+    <li>Home</li>
+    <li>Features</li>
+    <li>Contact</li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1 class="hero-title">Build Stunning Websites</h1>
+  <p class="hero-sub">Fast • Modern • Animated</p>
+  <button class="btn">Get Started</button>
+  <img src="https://picsum.photos/400" class="floating-img">
+</section>
+
+<section class="features">
+  <div class="card">⚡ Fast Performance</div>
+  <div class="card">🎨 Modern Design</div>
+  <div class="card">🚀 Easy Animations</div>
+</section>
+
+<section class="cta">
+  <h1>Ready to Launch?</h1>
+  <button class="btn">Start Now</button>
+</section>
+
+<script src="app.js">
+// gsap.registerPlugin(ScrollTrigger);
+
+// //////////////////////////////////////////////////
+// // Navbar slide in
+// //////////////////////////////////////////////////
+// gsap.from(".nav", {
+//   y: -80,
+//   opacity: 0,
+//   duration: 1
+// });
+
+// //////////////////////////////////////////////////
+// // Hero text reveal timeline
+// //////////////////////////////////////////////////
+// const heroTL = gsap.timeline();
+
+// heroTL
+//   .to(".hero-title", {opacity:1, y:-40, duration:1})
+//   .to(".hero-sub", {opacity:1, y:-20, duration:1}, "-=0.5")
+//   .from(".btn", {scale:0, duration:0.5});
+
+// //////////////////////////////////////////////////
+// // Floating image animation (infinite)
+// //////////////////////////////////////////////////
+// gsap.to(".floating-img", {
+//   y: 30,
+//   duration: 2,
+//   repeat: -1,
+//   yoyo: true,
+//   ease: "sine.inOut"
+// });
+
+// //////////////////////////////////////////////////
+// // Features scroll animation
+// //////////////////////////////////////////////////
+// gsap.to(".card", {
+//   scrollTrigger:{
+//     trigger: ".features",
+//     start: "top center"
+//   },
+//   opacity:1,
+//   y:0,
+//   duration:1,
+//   stagger:0.3
+// });
+
+// //////////////////////////////////////////////////
+// // CTA zoom animation
+// //////////////////////////////////////////////////
+// gsap.from(".cta h1", {
+//   scrollTrigger:{
+//     trigger: ".cta",
+//     start: "top center"
+//   },
+//   scale:0.5,
+//   opacity:0,
+//   duration:1
+// });
+
+// //////////////////////////////////////////////////
+// // Button hover interaction
+// //////////////////////////////////////////////////
+// document.querySelectorAll(".btn").forEach(btn => {
+//   btn.addEventListener("mouseenter", () => {
+//     gsap.to(btn, {scale:1.2, duration:0.3});
+//   });
+
+//   btn.addEventListener("mouseleave", () => {
+//     gsap.to(btn, {scale:1, duration:0.3});
+//   });
+// });
+
+window.addEventListener("DOMContentLoaded", () => {
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Navbar animation
+  gsap.from(".nav", {
+    y: -80,
+    opacity: 0,
+    duration: 1
+  });
+
+  // Hero timeline
+  const heroTL = gsap.timeline();
+  heroTL
+    .to(".hero-title", {opacity:1, y:-40, duration:1})
+    .to(".hero-sub", {opacity:1, y:-20, duration:1}, "-=0.5")
+    .from(".btn", {scale:0, duration:0.5});
+
+  // Floating image animation
+  gsap.to(".floating-img", {
+    y: 30,
+    duration: 2,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
+
+  // Features scroll animation
+  gsap.to(".card", {
+    scrollTrigger:{
+      trigger: ".features",
+      start: "top 80%"
+    },
+    opacity:1,
+    y:0,
+    duration:1,
+    stagger:0.3
+  });
+
+  // CTA animation
+  gsap.from(".cta h1", {
+    scrollTrigger:{
+      trigger: ".cta",
+      start: "top 80%"
+    },
+    scale:0.5,
+    opacity:0,
+    duration:1
+  });
+
+  // Button hover animation
+  document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+      gsap.to(btn, {scale:1.2, duration:0.3});
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      gsap.to(btn, {scale:1, duration:0.3});
+    });
+  });
+
+});
+
+</script>
+
+</body>
+</html>
